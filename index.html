@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>安德森风格作品集</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 标题区 -->
+        <header class="wes-header">
+            <h1 class="title">视觉艺术档案</h1>
+            <p class="subtitle">摄影 · 短片 · 特效</p>
+            <div class="symmetrical-decoration"></div>
+        </header>
+
+        <!-- 导航选项卡 -->
+        <div class="tabs-container">
+            <div class="tabs">
+                <button class="tab active" data-tab="photography">摄影作品</button>
+                <button class="tab" data-tab="films">短片作品</button>
+                <button class="tab" data-tab="vfx">特效制作</button>
+            </div>
+            <div class="tab-content active" id="photography">
+                <div class="gallery-grid">
+                    <!-- 摄影作品将通过JS动态加载 -->
+                </div>
+            </div>
+            <div class="tab-content" id="films">
+                <div class="video-gallery">
+                    <!-- 短片作品将通过JS动态加载 -->
+                </div>
+            </div>
+            <div class="tab-content" id="vfx">
+                <div class="mixed-gallery">
+                    <!-- 特效作品将通过JS动态加载 -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 图片预览模态框 -->
+        <div class="modal" id="image-modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modal-image">
+            <div class="caption" id="caption"></div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="wes-footer">
+        <div class="footer-content">
+            <p>© 2023 视觉艺术工作室 | 韦斯·安德森美学风格</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-vimeo-v"></i></a>
+                <a href="#"><i class="fab fa-behance"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

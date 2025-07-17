@@ -1,0 +1,271 @@
+/* 韦斯·安德森风格基础设置 */
+:root {
+    /* 《布达佩斯大饭店》配色方案 */
+    --wes-pink: #E8B4BC;
+    --wes-red: #C84648;
+    --wes-gold: #D4AF37;
+    --wes-cream: #F5F5F5;
+    --wes-dark: #3A3A3A;
+    
+    /* 《月升王国》配色方案 */
+    --wes-yellow: #F5D76E;
+    --wes-green: #3A5F0B;
+    --wes-coral: #FF6B6B;
+    --wes-beige: #F7F3E8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: var(--wes-cream);
+    color: var(--wes-dark);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 标题区样式 */
+.wes-header {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.title {
+    font-size: 3rem;
+    color: var(--wes-red);
+    margin-bottom: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--wes-dark);
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.symmetrical-decoration {
+    height: 5px;
+    background: linear-gradient(90deg, 
+        var(--wes-pink) 20%, 
+        var(--wes-gold) 20% 40%, 
+        var(--wes-red) 40% 60%, 
+        var(--wes-gold) 60% 80%, 
+        var(--wes-pink) 80%);
+    margin: 0 auto;
+    width: 60%;
+}
+
+/* 选项卡样式 */
+.tabs-container {
+    background-color: white;
+    border: 3px solid var(--wes-dark);
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    margin-bottom: 40px;
+}
+
+.tabs {
+    display: flex;
+    background-color: var(--wes-pink);
+    border-bottom: 3px solid var(--wes-dark);
+}
+
+.tab {
+    padding: 15px 25px;
+    background: none;
+    border: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--wes-dark);
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    flex: 1;
+    text-align: center;
+}
+
+.tab:not(:last-child) {
+    border-right: 3px solid var(--wes-dark);
+}
+
+.tab.active {
+    background-color: var(--wes-red);
+    color: white;
+}
+
+.tab:hover:not(.active) {
+    background-color: var(--wes-gold);
+}
+
+.tab-content {
+    display: none;
+    padding: 20px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* 画廊样式 */
+.gallery-grid, .video-gallery, .mixed-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border: 3px solid var(--wes-dark);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    aspect-ratio: 1 / 1;
+}
+
+.gallery-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.gallery-item img, .gallery-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.video-item {
+    position: relative;
+}
+
+.video-play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background-color: rgba(200, 70, 72, 0.7);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    z-index: 10;
+}
+
+/* 模态框样式 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow: auto;
+}
+
+.modal-content {
+    display: block;
+    margin: 50px auto;
+    max-width: 90%;
+    max-height: 80vh;
+    border: 5px solid var(--wes-pink);
+    box-shadow: 0 0 20px rgba(232, 180, 188, 0.5);
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: var(--wes-pink);
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: var(--wes-gold);
+}
+
+.caption {
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* 页脚样式 */
+.wes-footer {
+    background-color: var(--wes-dark);
+    color: var(--wes-cream);
+    padding: 20px 0;
+    text-align: center;
+    border-top: 3px solid var(--wes-red);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.social-links {
+    margin-top: 15px;
+}
+
+.social-links a {
+    color: var(--wes-cream);
+    margin: 0 10px;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--wes-gold);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .tabs {
+        flex-direction: column;
+    }
+    
+    .tab:not(:last-child) {
+        border-right: none;
+        border-bottom: 3px solid var(--wes-dark);
+    }
+    
+    .gallery-grid, .video-gallery, .mixed-gallery {
+        grid-template-columns: 1fr;
+    }
+}
